@@ -20,12 +20,17 @@ retroRouter.get('/new', (req, res) => {
 // Create Route
 retroRouter.post('/', (req, res) => {
     Retro.create(req.body, (error, createdRetro) => {
-        console.log(createdRetro)
-        console.log(req.body)
-        console.log(error)
         res.redirect('/retro')
-
     })
 })
+
+// Show Route
+retroRouter.get("/:id", (req, res) => {
+    Retro.findById(req.params.id, (err, foundRetro) => {
+      res.render("show.ejs", {
+        retro: foundRetro,
+      })
+    })
+  })
 
 module.exports = retroRouter

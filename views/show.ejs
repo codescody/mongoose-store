@@ -13,18 +13,14 @@
                 height: 200px;
             }
         </style>
-		<h1>Retro Shop</h1>
+		<h1>SHOW</h1>
 		<nav>
-            <a href="/retro/new">Add an Item</a>
+            <a href="/retro">back</a>
         </nav>
-            <% retros.forEach(retro => { %>
-                <h2><a href="/retro/<%=retro._id%>"><%=retro.name; %></a></h2>
+                <h1><%=retro.name%></h1>
                 <h2><%=retro.description%></h2>
                 <img src=<%=retro.img%>> 
                 <h5><%=retro.price%></h5>
                 <h5><%=retro.qty%></h5>
-                
-            <% }) %>
 	</body>
 </html>
-
