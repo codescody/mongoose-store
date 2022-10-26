@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Retro Shop</title>
+	</head>
+	<body>
+		<h1>Retro Shop</h1>
+		<nav>
+            <a href="/retro/new">Add an Item</a>
+        </nav>
+            <% retros.forEach(retro => { %>
+                <h1><%=retro.name%></h1>
+                <h2><%=retro.description%></h2>
+                <img src=<%=retro.img%>>
+                <h5><%=retro.price%></h5>
+                <h5><%=retro.qty%></h5>
+            <% }) %>
+	</body>
+</html>
