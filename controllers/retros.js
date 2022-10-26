@@ -3,8 +3,8 @@ const retroRouter = express.Router()
 const retroData = require('../models/seed')
 const Retro = require('../models/retro.js')
 
-retroRouter.get('/', (req, res) => {
-    res.send('hi')
+retroRouter.get('/new', (req, res) => {
+    res.render('new.ejs')
 })
 
 module.exports = retroRouter

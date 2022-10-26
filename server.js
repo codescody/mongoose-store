@@ -12,10 +12,10 @@ mongoose.connect(process.env.DATABASE_URL, {
     useUnifiedTopology: true,
 })
 
-// app.use(express.urlencoded({extended: true}))
-// app.use(methodOverride("_method"))
-// app.use("/retro", retroController)
-// app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride("_method"))
+app.use("/retro", retroController)
+app.use(express.static('public'))
 
 const db = mongoose.connection
 db.on("error", (err) => console.log(err.message + " is mongo not running?"))
