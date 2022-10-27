@@ -17,6 +17,13 @@ retroRouter.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
+// Delete Route
+retroRouter.delete("/:id", (req, res) => {
+  Retro.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/retro")
+  })
+})
+
 // Update Route
 retroRouter.put("/:id", (req, res) => {
   Retro.findByIdAndUpdate(

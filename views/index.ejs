@@ -24,6 +24,10 @@
                 <h5><%=retro.price%></h5>
                 <h5><%=retro.qty%></h5>
                 
+                <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE" />
+                  </form>
+
             <% }) %>
 	</body>
 </html>
