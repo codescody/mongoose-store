@@ -9,12 +9,13 @@
 	<body>
 		<h1>New Retro Item</h1>
 		<form action="/retro" method="POST">
-			Name: <input type="text" name="name" required /><br />
-			Description: <input type="text" name="description" required /><br />
-			Image URL: <input type="text" name="img" required /><br />
-            Price: <input type="text" name="price" required /><br />
-            Quantity: <input type="number" name="qty" required /><br />
+			Name: <input type="text" name="name" placeholder="Name" required /><br />
+			Description: <input type="text" name="description" placeholder="Description" required /><br />
+			Image URL: <input type="text" name="img" placeholder="Image URL" required /><br />
+            Price: <input type="number" name="price" placeholder="Price" required /><br />
+            Quantity: <input type="number" name="qty" placeholder="Quantity" required /><br />
 			<input type="submit" name="" value="Add Item" />
 		</form>
+		<a href="/retro">back</a>
 	</body>
 </html>

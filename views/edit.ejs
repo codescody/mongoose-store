@@ -4,17 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Add an Item</title>
+		<title>Edit Item</title>
 	</head>
 	<body>
-		<h1>New Retro Item</h1>
+		<h1>Edit Item</h1>
 		<form action="/retro/<%=retro._id%>?_method=PUT" method="POST">
-			Name: <input type="text" name="name" required /><br />
-			Description: <input type="text" name="description" required /><br />
-			Image URL: <input type="text" name="img" required /><br />
-            Price: <input type="text" name="price" required /><br />
-            Quantity: <input type="number" name="qty" required /><br />
-			<input type="submit" name="" value="Add Item" />
+			Name: <input type="text" name="name" value=<%=retro.name%> placeholder="Name" required /><br />
+			Description: <input type="text" name="description" value=<%=retro.description%> placeholder="Description" required /><br />
+			Image URL: <input type="text" name="img" value=<%=retro.img%> placeholder="Image URL" required /><br />
+            Price: $ <input type="number" name="price" value=<%=retro.price%> placeholder="Price" required /><br />
+            Quantity: <input type="number" name="qty" value=<%=retro.qty%> placeholder="Quantity" required /><br />
+			<input type="submit" name="" value="Edit Item" />
 		</form>
+        <a href="/retro">back</a>
 	</body>
 </html>

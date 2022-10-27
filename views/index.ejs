@@ -9,8 +9,8 @@
 	<body>
         <style>
             img {
-                width: 200px;
-                height: 200px;
+                width: 300px;
+                height: 300px;
             }
         </style>
 		<h1>Retro Shop</h1>
@@ -20,10 +20,10 @@
             <% retros.forEach(retro => { %>
                 <h2><a href="/retro/<%=retro._id%>"><%=retro.name; %></a></h2>
                 <h2><%=retro.description%></h2>
-                <img src=<%=retro.img%>> 
-                <h5><%=retro.price%></h5>
+                <a href="/retro/<%=retro._id%>"><img src=<%=retro.img%>></a>
+                <h5>$<%=retro.price%></h5>
                 <h5><%=retro.qty%></h5>
-                
+                <a href="/retro/<%=retro._id%>/edit">Edit</a>
                 <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
                   </form>
