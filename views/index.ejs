@@ -9,25 +9,47 @@
 	<body>
         <style>
             img {
-                width: 300px;
-                height: 300px;
+                width: 250px;
+                height: 250px;
+                border-radius: 5%;
             }
+            body {
+                background-image: url("https://rare-gallery.com/uploads/posts/120919-neon-synthwave-retrowave-grid-mountains-purple-hd.jpg");
+                background-size: cover;
+            }
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 4em;
+            }
+            #container {
+                display: inline-block;
+                width: 20%;
+                padding: 5%;
+            }
+            #indvItem {
+                color: white;
+            }
+            
         </style>
-		<h1>Retro Shop</h1>
+        <h1>Retro Shop</h1>
 		<nav>
             <a href="/retro/new">Add an Item</a>
         </nav>
             <% retros.forEach(retro => { %>
-                <h2><a href="/retro/<%=retro._id%>"><%=retro.name; %></a></h2>
-                <h2><%=retro.description%></h2>
-                <a href="/retro/<%=retro._id%>"><img src=<%=retro.img%>></a>
-                <h5>$<%=retro.price%></h5>
-                <h5><%=retro.qty%></h5>
-                <a href="/retro/<%=retro._id%>/edit">Edit</a>
-                <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
+            <div id="container">
+                <div id="indvItem">
+                    <h2><a href="/retro/<%=retro._id%>"><%=retro.name; %></a></h2>
+                    <h2><%=retro.description%></h2>
+                    <a href="/retro/<%=retro._id%>"><img src=<%=retro.img%>></a>
+                    <h5>$<%=retro.price%></h5>
+                    <h5><%=retro.qty%></h5>
+                    <a href="/retro/<%=retro._id%>/edit">Edit</a>
+                    <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
-                  </form>
-
+                </form>
+                </div>
+            </div>
             <% }) %>
 	</body>
 </html>
