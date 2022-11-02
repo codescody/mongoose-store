@@ -24,13 +24,19 @@
             }
             #container {
                 display: inline-block;
-                width: 20%;
+                width: 21%;
                 padding: 5%;
             }
             #indvItem {
                 color: white;
             }
-            
+            a {
+                color: rgb(211, 145, 220);
+            }
+            nav {
+                align-items: center;
+                text-align: center;
+            }
         </style>
         <h1>Retro Shop</h1>
 		<nav>
@@ -44,10 +50,6 @@
                     <a href="/retro/<%=retro._id%>"><img src=<%=retro.img%>></a>
                     <h5>$<%=retro.price%></h5>
                     <h5><%=retro.qty%></h5>
-                    <a href="/retro/<%=retro._id%>/edit">Edit</a>
-                    <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE" />
-                </form>
                 </div>
             </div>
             <% }) %>

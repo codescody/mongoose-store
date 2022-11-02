@@ -11,9 +11,26 @@
             img {
                 width: 300px;
                 height: 300px;
+                border-radius: 5%;
+            }
+            body {
+                background-image: url("https://rare-gallery.com/uploads/posts/120919-neon-synthwave-retrowave-grid-mountains-purple-hd.jpg");
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                color: white;
+            }
+            div {
+                margin-top: 10%;
+                padding: 10px;
+            }
+            a {
+                color: rgb(211, 145, 220);
             }
         </style>
-		<h1><%=retro.name%></h1>
+		    <div>
+                <h1><%=retro.name%></h1>
                 <h2><%=retro.description%></h2>
                 <img src=<%=retro.img%>> 
                 <h5>$<%=retro.price%></h5>
@@ -25,8 +42,12 @@
                     <form action="/retro/<%=retro._id%>/buy?_method=PUT" method="POST">
                     <input class="delete" type="submit" value="Buy">
                 </form>
+                <form action="/retro/<%= retro.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE" />
+                </form>
                 <% } %>
                 <a href="/retro/<%=retro._id%>/edit">Edit</a>
                 <a href="/retro">back</a>
+            </div>
 	</body>
 </html>

@@ -7,6 +7,25 @@
 		<title>Edit Item</title>
 	</head>
 	<body>
+		<style>
+			body {
+				background-image: url("https://rare-gallery.com/uploads/posts/120919-neon-synthwave-retrowave-grid-mountains-purple-hd.jpg");
+                background-size: cover;
+			}
+			form {
+                color: white;
+            }
+            input {
+                display: block;
+                font-size: 20px;
+            }
+			a {
+                color: rgb(211, 145, 220);
+            }
+			h1 {
+				color: white;
+			}
+		</style>
 		<h1>Edit Item</h1>
 		<form action="/retro/<%=retro._id%>?_method=PUT" method="POST">
 			Name: <input type="text" name="name" value=<%=retro.name%> placeholder="Name" required /><br />
